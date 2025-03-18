@@ -15,13 +15,22 @@ function adicionarAmigo() {
     input.value = "";
 };
 function atualizarLista() {
-    let lista = document.getElementById("listaAmigos");
+    const lista = document.getElementById("listaAmigos");
     lista.innerHTML = ""; // Limpa a lista antes de atualizar
 
     // Percorre o array e adiciona os nomes à lista visível
     amigos.forEach(nome => {
-        let item = document.createElement("li");
+        const item = document.createElement("li");
         item.textContent = nome;
         lista.appendChild(item);
     });
+}
+function sortearAmigo() {
+    if (amigos.length === 0) {
+        alert("A lista está vazia! Adicione amigos antes de sortear.");
+        return;
+    }
+
+    const sorteado = amigos[Math.floor(Math.random() * amigos.length)];
+    document.getElementById("resultado").innerHTML = `<li> Seu amigo secreto é ${sorteado} </li>`;
 }
