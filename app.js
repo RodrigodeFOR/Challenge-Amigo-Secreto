@@ -1,9 +1,9 @@
-let amigos = []; // Agora podemos redefinir toda a lista, se necessário.
+const amigos = [];
 
 function adicionarAmigo() {
-    let input = document.getElementById("amigo");
-    let nome = input.value.trim();
-    let lista = document.getElementById("listaAmigos");
+    const input = document.getElementById("amigo");
+    const nome = input.value.trim();
+    const lista = document.getElementById("listaAmigos");
 
     if (!nome) {
         alert("Por favor, digite um nome válido.");
@@ -13,4 +13,4 @@ function adicionarAmigo() {
     amigos.push(nome);
     atualizarLista();
     input.value = "";
-}
+};
